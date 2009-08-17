@@ -1,0 +1,7 @@
+=== Usage
+opens external links in a new window
+	$(document).ready(function() {
+		$("a").prepare_links();
+	});
+
+
