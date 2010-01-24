@@ -1,0 +1,10 @@
+Usage
+=====
+
+Opens external links in a new window
+
+<code><pre>
+$(document).ready(function() {
+	$("a").prepare_links();
+});
+</pre></code>
