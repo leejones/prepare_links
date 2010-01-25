@@ -1,10 +1,9 @@
-Usage
-=====
+# jQuery Prepare Links Plugin
 
 Opens external links in a new window
 
-<code><pre>
-$(document).ready(function() {
-	$("a").prepare_links();
-});
-</pre></code>
+    $(document).ready(function() {
+    	$("a").prepare_links();
+    });
+    
+Considers same domain, subdomain, and localhost to be internal links by default
