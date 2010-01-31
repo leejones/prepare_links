@@ -1,9 +1,52 @@
 # jQuery Prepare Links Plugin
 
-Opens external links in a new window
+Automagically open links to other sites in a new window.
+
+I'm generally not a huge fan of opening links in a new window, but clients frequently want this functionality on their sites.
+
+## Basic Usage
+Opens all links outside of your domain in a new window.
 
     $(document).ready(function() {
     	$("a").prepare_links();
     });
     
-Considers same domain, subdomain, and localhost to be internal links by default
+Considers same domain, subdomain, and localhost to be internal links by default.  See the options to change default behavior.
+
+## Options
+
+    subdomains_are_external
+
+boolean  
+defaults to false  
+determines whether subdomains like www.example.com and blog.example.com open in a new window
+
+    additional_internal_sites
+
+array  
+defaults to empty  
+allows you to specify additional domains that should open in the same window
+
+### Example with options
+
+    $(document).ready(function() {
+        
+        // build options for prepare links
+        var options = {
+          	subdomains_are_external : true,
+    		additional_internal_sites : [
+    		    "http://github.com",
+    		    "http://google.com"
+    		]
+        };
+
+        // call prepare links with predefined options
+    	$("a").prepare_links(options);
+    });
+
+Links for the current domain, github.com, and google.com will open in the current window.  All other links including subdomains will open in a new window.
+
+## Feedback
+
+If you find a bug,  please write a unit test for it and submit a patch.  You can also raise an issue on [github](http://github.com/leejones/prepare_links).
+
